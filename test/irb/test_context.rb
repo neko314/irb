@@ -461,6 +461,7 @@ module TestIRB
       if '2.5.0' <= RUBY_VERSION && RUBY_VERSION < '3.0.0' && STDOUT.tty?
         expected = [
           :*, /Traceback \(most recent call last\):\n/,
+          :*, /\t... 8 levels...\n/,
           :*, /\t 2: from \(irb\):1:in `<main>'\n/,
           :*, /\t 1: from \(irb\):1:in `hoge'\n/,
           :*, /\(irb\):1:in `fuga': unhandled exception\n/,
@@ -470,6 +471,7 @@ module TestIRB
           :*, /\(irb\):1:in `fuga': unhandled exception\n/,
           :*, /\tfrom \(irb\):1:in `hoge'\n/,
           :*, /\tfrom \(irb\):1:in `<main>'\n/,
+          :*, /\t... 8 levels...\n/,
         ]
       end
       assert_pattern_list(expected, out)
@@ -491,6 +493,7 @@ module TestIRB
       if '2.5.0' <= RUBY_VERSION && RUBY_VERSION < '3.0.0' && STDOUT.tty?
         expected = [
           :*, /Traceback \(most recent call last\):\n/,
+          :*, /\t... 8 levels...\n/,
           :*, /\t 2: from \(irb\):1:in `<main>'\n/,
           :*, /\t 1: from \(irb\):1:in `hoge'\n/,
           :*, /\(irb\):1:in `fuga': A\\xF3B \(RuntimeError\)\n/,
@@ -500,6 +503,7 @@ module TestIRB
           :*, /\(irb\):1:in `fuga': A\\xF3B \(RuntimeError\)\n/,
           :*, /\tfrom \(irb\):1:in `hoge'\n/,
           :*, /\tfrom \(irb\):1:in `<main>'\n/,
+          :*, /\t... 8 levels...\n/,
         ]
       end
       assert_pattern_list(expected, out)
@@ -527,7 +531,7 @@ module TestIRB
       if '2.5.0' <= RUBY_VERSION && RUBY_VERSION < '3.0.0' && STDOUT.tty?
         expected = [
           :*, /Traceback \(most recent call last\):\n/,
-          :*, /\t... 5 levels...\n/,
+          :*, /\t... 27 levels...\n/,
           :*, /\t16: from \(irb\):1:in `a4'\n/,
           :*, /\t15: from \(irb\):1:in `a5'\n/,
           :*, /\t14: from \(irb\):1:in `a6'\n/,
@@ -565,7 +569,7 @@ module TestIRB
           :*, /\tfrom \(irb\):1:in `a6'\n/,
           :*, /\tfrom \(irb\):1:in `a5'\n/,
           :*, /\tfrom \(irb\):1:in `a4'\n/,
-          :*, /\t... 5 levels...\n/,
+          :*, /\t... 27 levels...\n/,
         ]
       end
       assert_pattern_list(expected, out)
