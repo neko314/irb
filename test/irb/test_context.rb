@@ -220,7 +220,7 @@ module TestIRB
       # The default
       irb.context.echo = true
       irb.context.echo_on_assignment = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -230,7 +230,7 @@ module TestIRB
       input.reset
       irb.context.echo = true
       irb.context.echo_on_assignment = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -240,7 +240,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -250,7 +250,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -268,7 +268,7 @@ module TestIRB
 
       irb.context.echo = true
       irb.context.echo_on_assignment = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -277,7 +277,7 @@ module TestIRB
       input.reset
       irb.context.echo = true
       irb.context.echo_on_assignment = :truncate
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -286,7 +286,7 @@ module TestIRB
       input.reset
       irb.context.echo = true
       irb.context.echo_on_assignment = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -295,7 +295,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -304,7 +304,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = :truncate
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -313,7 +313,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -332,7 +332,7 @@ module TestIRB
 
       irb.context.echo = true
       irb.context.echo_on_assignment = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -342,7 +342,7 @@ module TestIRB
       input.reset
       irb.context.echo = true
       irb.context.echo_on_assignment = :truncate
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -352,7 +352,7 @@ module TestIRB
       input.reset
       irb.context.echo = true
       irb.context.echo_on_assignment = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -362,7 +362,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -372,7 +372,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = :truncate
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -382,7 +382,7 @@ module TestIRB
       input.reset
       irb.context.echo = false
       irb.context.echo_on_assignment = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -429,7 +429,7 @@ module TestIRB
 
       # The default
       irb.context.newline_before_multiline_output = true
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
@@ -439,7 +439,7 @@ module TestIRB
       # No newline before multiline output
       input.reset
       irb.context.newline_before_multiline_output = false
-      out, err = capture_io do
+      out, err = capture_output do
         irb.eval_input
       end
       assert_empty err
